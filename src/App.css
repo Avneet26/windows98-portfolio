@@ -1,0 +1,53 @@
+:root{
+    --teal: #017E7F;
+    --gray: #A9AEAE;
+    --dark-blue: #0000A8;
+}
+
+.main-screen-container{
+    background: var(--teal);
+    height: calc(100vh - 40px);
+}
+
+.task-bar-container{
+    height: 40px;
+    background: var(--gray);
+}
+
+.windows-border{
+    border-top: 2px solid #EBEFED;
+    border-left: 2px solid #EBEFED;
+    border-right: 2px solid #10101f;
+    border-bottom: 2px solid #10101f;
+}
+
+.desktop-icon{
+    color: white;
+    width: 90px;
+    font-size: 13px;
+    left: 5px;
+    text-align: center;
+}
+.desktop-icon p {
+    text-shadow: 1px 1px black;
+}
+
+.desktop-icon:focus-within p{
+    background: var(--dark-blue);
+    outline: 1px dashed yellow;
+}
+
+.desktop-icon:focus img{
+    outline: none;
+}
+
+.icon-img {
+    image-rendering: pixelated;
+    /*image-rendering: crisp-edges;*/
+}
+
+.desktop-icon.isDragging{
+    opacity: 0.7;
+    border: 1px dashed white;
+    cursor: grabbing;
+}

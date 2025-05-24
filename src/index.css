@@ -1,0 +1,12 @@
+@font-face {
+  font-family: "MsFont";
+  src: url("../public/fonts/ms-sans-serif-1.otf.woff2/ms-sans-serif-1.otf.woff2") format("woff2")
+}
+
+*{
+  font-family: "MsFont", sans-serif;
+  image-rendering: pixelated;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: auto;
+  font-smooth: never;
+}
