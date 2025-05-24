@@ -1,18 +1,21 @@
 import DesktopIcons from "./DesktopIcons.tsx";
 
-export default function MainScreen() {
+import computerIcon from "../assets/png/computer_explorer-2.png";
+import aboutIcon from "../assets/png/directory_open_file_mydocs_2k-2.png";
+import cmdIcon from "../assets/png/console_prompt-0.png";
 
+export default function MainScreen() {
     const desktopIcons = [
-        {name: "My Computer", icon: "src/assets/png/computer_explorer-2.png"},
-        {name: "About Me", icon: "src/assets/png/directory_open_file_mydocs_2k-2.png"},
-        {name: "Command Prompt", icon: "src/assets/png/console_prompt-0.png"},
-    ]
+        { name: "My Computer", icon: computerIcon },
+        { name: "About Me", icon: aboutIcon },
+        { name: "Command Prompt", icon: cmdIcon },
+    ];
 
     return (
         <div className="main-screen-container w-100 position-relative">
             {desktopIcons.map((icon, index) => (
-                <DesktopIcons name={icon.name} image={icon.icon} key={index} tabindex={index}/>
+                <DesktopIcons name={icon.name} image={icon.icon} key={index} tabindex={index} />
             ))}
         </div>
-    )
+    );
 }
