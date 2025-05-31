@@ -17,6 +17,7 @@
     height: 32px;
     background: var(--gray);
     padding: 1px;
+    z-index: 99;
 }
 
 .windows-border{

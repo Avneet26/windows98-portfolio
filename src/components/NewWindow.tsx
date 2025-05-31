@@ -12,7 +12,7 @@ type PropType = {
 
 export default function NewWindow({ title, id }: PropType) {
 
-    const {closeWindow} = useWindowManager();
+    const {closeWindow, minimizedWindow} = useWindowManager();
 
     return (
         <div className="window windows-border h-100" data-id={id}>
@@ -20,7 +20,7 @@ export default function NewWindow({ title, id }: PropType) {
                 <div className="window-title-bar d-flex justify-content-between align-items-center">
                     {title}
                     <div className="window-title-buttons d-flex align-items-center gap-1">
-                        <WindowsButton name={"minimise"} imgSrc={minimiseIcon} />
+                        <WindowsButton name={"minimise"} imgSrc={minimiseIcon} handleClick={() => {minimizedWindow(id)}}/>
                         <WindowsButton name={"maximise"} imgSrc={maximiseIcon} />
                         <WindowsButton name={"cross"} imgSrc={crossIcon} handleClick={() => {closeWindow(id)}} />
                     </div>

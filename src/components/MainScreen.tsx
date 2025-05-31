@@ -6,9 +6,9 @@ import aboutIcon from "../assets/png/directory_open_file_mydocs_2k-2.png";
 import cmdIcon from "../assets/png/console_prompt-0.png";
 import notepadIcon from "../assets/png/notepad-1.png";
 import projectIcon from "../assets/png/package-1.png";
-import {Rnd} from "react-rnd";
+import {type DraggableData, type Position, type ResizableDelta, Rnd} from "react-rnd";
 import NewWindow from "./NewWindow.tsx";
-import {useWindowManager} from "../context/WindowsManager.tsx";
+import {useWindowManager, type WindowInstance} from "../context/WindowsManager.tsx";
 
 export default function MainScreen() {
     const desktopIcons = [
@@ -19,7 +19,35 @@ export default function MainScreen() {
         { name: "Command Prompt", icon: cmdIcon },
     ];
 
-    const { openWindows } = useWindowManager();
+    const { openWindows, handlePositionChange } = useWindowManager();
+
+    const MaxWindows:WindowInstance[] = openWindows.filter((x) => !x.isMinimized);
+
+    const handleChange = (
+        name: string,
+        _e: MouseEvent | TouchEvent,
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-expect-error
+        _dir: ResizeDirection,
+        _refToElement: HTMLElement,
+        delta: ResizableDelta,
+        position: Position
+    ) => {
+        console.log("Resizing:", name, delta, position);
+        handlePositionChange(name, position.x, position.y, delta.width, delta.height);
+    };
+
+    const handleDrag = (
+        name: string,
+        _e: unknown,
+        data: DraggableData
+    ) => {
+        const { x, y } = data;
+        console.log("Dragging:", name, x, y);
+
+        // Call your existing state update logic
+        handlePositionChange(name, x, y, 0, 0); // width & height unchanged
+    };
 
     return (
         <div className="main-screen-container w-100 position-relative">
@@ -28,7 +56,7 @@ export default function MainScreen() {
             ))}
 
             {
-                openWindows.map((openWindow) => (
+                MaxWindows.map((openWindow) => (
                     <Rnd
                         default={{
                             x: openWindow.x,
@@ -42,6 +70,12 @@ export default function MainScreen() {
                         minHeight={350}
                         minWidth={350}
                         key={openWindow.name}
+                        onResizeStop={(e, dir, refToElement, delta, position) =>
+                            handleChange(openWindow.name, e, dir, refToElement, delta, position)
+                        }
+                        onDragStop={(e, data) =>
+                            handleDrag(openWindow.name, e, data)
+                        }
                     >
                         <NewWindow title={openWindow.name} id={openWindow.name}/>
                     </Rnd>
