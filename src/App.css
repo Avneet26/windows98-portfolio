@@ -6,12 +6,17 @@
 
 .main-screen-container{
     background: var(--teal);
-    height: calc(100vh - 40px);
+    height: calc(100vh - 32px);
+    background-image: url("./assets/background1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .task-bar-container{
-    height: 40px;
+    height: 32px;
     background: var(--gray);
+    padding: 1px;
 }
 
 .windows-border{
@@ -50,4 +55,71 @@
     opacity: 0.7;
     border: 1px dashed white;
     cursor: grabbing;
+}
+
+.window{
+    background: var(--gray);
+}
+
+.window .window-title-bar{
+    background: #070376;
+    background: linear-gradient(90deg,rgba(7, 3, 118, 1) 0%, rgba(23, 125, 195, 1) 100%);
+    color: white;
+    margin: 2px;
+    font-size: 13px;
+    padding: 2px;
+    user-select: none;
+}
+
+.window .window-title-bar-container{
+    border-bottom: 2px solid black;
+    padding-bottom: 1px;
+}
+
+.window-title-bar .windows-button{
+    width: 20px;
+    height: 20px;
+}
+
+.windows-button.button-pressed:active{
+    border-top: 2px solid #10101f;
+    border-left: 2px solid #10101f;
+    border-right: 2px solid #EBEFED;
+    border-bottom: 2px solid #EBEFED;
+}
+
+.window-title-bar .windows-button img {
+    width: 10px;
+    height: 10px;
+    margin: 3px;
+    top: 0;
+    padding: 0;
+}
+
+button.windows-button.windows-border {
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    gap: 10px;
+    font-size: 13px;
+    align-items: center;
+}
+
+.divider {
+    width: 2px;
+    margin: 0 2px;
+    background-color: darkgray;
+    height: 100%;
+}
+
+.divider.windows-border {
+    border-top: 2px solid #EBEFED;
+    border-left: 2px solid #EBEFED;
+    border-right: 2px solid #888888;
+    border-bottom: 2px solid #888888;
+}
+
+.task-bar-container .divider ~ .windows-button {
+    width: 200px;
 }

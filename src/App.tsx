@@ -1,12 +1,15 @@
 import './App.css'
 import MainScreen from "./components/MainScreen.tsx";
 import TaskbarContainer from "./components/TaskbarContainer.tsx";
+import {WindowManagerProvider} from "./context/WindowsManager.tsx";
 
 function App() {
   return (
     <div className="main-container d-flex flex-column">
-        <MainScreen />
-        <TaskbarContainer />
+        <WindowManagerProvider>
+            <MainScreen />
+            <TaskbarContainer />
+        </WindowManagerProvider>
     </div>
   )
 }
