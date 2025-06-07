@@ -124,3 +124,7 @@ button.windows-button.windows-border {
 .task-bar-container .divider ~ .windows-button {
     width: 200px;
 }
+
+.window-content {
+    overflow: auto;
+}

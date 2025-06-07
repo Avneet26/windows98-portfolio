@@ -4,6 +4,7 @@ import crossIcon from "../assets/Cross.png";
 import maximiseIcon from "../assets/pixel_art (2).png";
 import minimiseIcon from "../assets/Minimize.png";
 import {useWindowManager} from "../context/WindowsManager.tsx";
+import AboutMe from "./AboutMe.tsx";
 
 type PropType = {
     title: string;
@@ -14,8 +15,17 @@ export default function NewWindow({ title, id }: PropType) {
 
     const {closeWindow, minimizedWindow} = useWindowManager();
 
+    const renderWindowContent = (title: string) => {
+        switch (title) {
+            case "About Me":
+                return <AboutMe />;
+            default:
+                return <p>Content is in work</p>;
+        }
+    };
+
     return (
-        <div className="window windows-border h-100" data-id={id}>
+        <div className="window windows-border h-100 d-flex flex-column" data-id={id}>
             <div className="window-title-bar-container">
                 <div className="window-title-bar d-flex justify-content-between align-items-center">
                     {title}
@@ -26,8 +36,10 @@ export default function NewWindow({ title, id }: PropType) {
                     </div>
                 </div>
             </div>
-            <div className="window-content p-3">
-                <p>This is the content of the window.</p>
+            <div className="window-content m-2 windows-border">
+                <div className="p-3">
+                    {renderWindowContent(title)}
+                </div>
             </div>
         </div>
     );
