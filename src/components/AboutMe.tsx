@@ -20,15 +20,15 @@ export default function AboutMe() {
                     />
 
                     <p>
-                            Hey, I’m <strong>Avneet Singh Virdi</strong>—or just <strong>Avi</strong>, if
-                            we’re keeping things casual (which we are). I’m currently living in Canada,
+                            Hey, I’m <strong>Avneet Virdi</strong>—or just <strong>Avi</strong>.
+                            I’m currently living in Canada,
                             studying <strong>Information Technology at Humber College</strong>, and doing
                             my best to juggle academics, side projects, fitness, a love for tech, and the
                             occasional existential crisis.
                     </p>
 
                     <p>
-                            Before this chapter, I was back in <strong>Delhi, India</strong>, where I
+                            Before this, I was back in <strong>Delhi, India</strong>, where I
                             completed my <strong>Bachelor’s in IT</strong> and started my journey into
                             tech. I didn’t follow a traditional path—I’m a{" "}
                             <strong>self-taught full stack developer</strong>, which basically means a
@@ -72,13 +72,13 @@ export default function AboutMe() {
                         className="windows-border p-1 mb-2"
                     />
 
-                    <p><em>*The Not Important Section*</em></p>
+                    <p><em>*The Not So Important Section*</em></p>
 
                     <p>
                             Outside of code, I’m just a regular person trying to keep life interesting. I
-                            hit the <strong>gym</strong> about five times a week (because my love for
-                            food needs balance), I <strong>play guitar</strong> (decently), and I{" "}
-                            <strong>sing</strong> like no one’s listening—because usually, no one is. I
+                            hit the <strong>gym</strong> about four times a week (because my love for
+                            food needs balance), I <strong>play guitar</strong> (decently)
+                        like no one’s listening because usually, no one does. I
                             love <strong>video games</strong>, not just as a hobby, but because the idea
                             of stepping into a different world, even for a little while, is something I
                             find oddly therapeutic. I also dream of <strong>traveling more</strong>, but
@@ -101,7 +101,7 @@ export default function AboutMe() {
                     <p>
                             <em>
                                     “That life is like a bad joke —sometimes things work out, and sometimes
-                                    they don’t. But we have to live, I guess.” - Obviously Avneet
+                                    they don’t. But we have to keep living.” - Obviously Avneet
                             </em>
                     </p>
 

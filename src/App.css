@@ -4,6 +4,10 @@
     --dark-blue: #0000A8;
 }
 
+body{
+    overflow: hidden;
+}
+
 .main-screen-container{
     background: var(--teal);
     height: calc(100vh - 32px);
