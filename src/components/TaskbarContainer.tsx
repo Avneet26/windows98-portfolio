@@ -17,6 +17,7 @@ export default function TaskbarContainer() {
                     key={window.name}
                     imgSrc={window.image}
                     fullBtn={true}
+                    isMinimized={window.isMinimized}
                     handleClick={() => maximizedWindow(window.name)} />
             ))}
         </div>

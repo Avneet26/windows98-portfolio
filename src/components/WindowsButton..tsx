@@ -1,7 +1,8 @@
-export default function WindowsButton({name, imgSrc, handleClick,fullBtn}: {
+export default function WindowsButton({name, imgSrc, handleClick,fullBtn, isMinimized}: {
     name: string;
     imgSrc?: string;
     handleClick?: () => void;
+    isMinimized?: boolean;
     fullBtn?: boolean;
 }) {
     function handleButtonClick() {
@@ -10,7 +11,8 @@ export default function WindowsButton({name, imgSrc, handleClick,fullBtn}: {
 
     return (
         <button
-            className="windows-button windows-border window p-0 m-0 button-pressed"
+            className={`windows-button windows-border window p-0 m-0 button-pressed 
+                ${isMinimized ? "" : "button-active button-inverted"}`}
             onClick={handleButtonClick}
         >
             {fullBtn ? (

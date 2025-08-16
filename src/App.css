@@ -111,6 +111,18 @@ button.windows-button.windows-border {
     align-items: center;
 }
 
+.task-bar-container .divider ~ .windows-button.button-pressed.button-active:focus{
+    outline: 1px dashed black;
+    outline-offset: -4px;
+}
+
+.task-bar-container .divider ~ .windows-button.button-pressed.button-active.button-inverted{
+    border-top: 2px solid #10101f;
+    border-left: 2px solid #10101f;
+    border-right: 2px solid #EBEFED;
+    border-bottom: 2px solid #EBEFED;
+}
+
 .divider {
     width: 2px;
     margin: 0 2px;
