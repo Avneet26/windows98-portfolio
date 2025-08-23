@@ -6,6 +6,7 @@ import aboutIcon from "../assets/png/directory_open_file_mydocs_2k-2.png";
 import cmdIcon from "../assets/png/console_prompt-0.png";
 import notepadIcon from "../assets/png/notepad-1.png";
 import projectIcon from "../assets/png/package-1.png";
+import contactIcon from "../assets/png/fax_machine-1.png";
 import { type DraggableData, type Position, type ResizableDelta, Rnd } from "react-rnd";
 import NewWindow from "./NewWindow.tsx";
 import { useWindowManager, type WindowInstance } from "../context/WindowsManager.tsx";
@@ -14,9 +15,10 @@ export default function MainScreen() {
     const desktopIcons = [
         { name: "My Computer", icon: computerIcon },
         { name: "About Me", icon: aboutIcon },
-        { name: "My Hobby Projects", icon: projectIcon },
+        { name: "My Projects", icon: projectIcon },
         { name: "My Experience", icon: notepadIcon },
         { name: "Command Prompt", icon: cmdIcon },
+        { name: "Contact Me", icon: contactIcon}
     ];
 
     const { openWindows, handlePositionChange } = useWindowManager();

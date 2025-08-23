@@ -6,6 +6,7 @@ import minimiseIcon from "../assets/Minimize.png";
 import { useWindowManager } from "../context/WindowsManager.tsx";
 import AboutMe from "./AboutMe.tsx";
 import MyExperience from "./MyExperience.tsx";
+import HobbyProjects from "./HobbyProjects.tsx";
 
 type PropType = {
     title: string;
@@ -20,10 +21,14 @@ export default function NewWindow({ title, id }: PropType) {
 
     const renderWindowContent = (title: string) => {
         switch (title) {
+            case "My Computer":
+                return <p>Content is in work (little ambitious)</p>
             case "About Me":
                 return <AboutMe />;
             case "My Experience":
                 return <MyExperience />;
+            case "My Hobby Projects":
+                return <HobbyProjects />;
             default:
                 return <p>Content is in work</p>;
         }
